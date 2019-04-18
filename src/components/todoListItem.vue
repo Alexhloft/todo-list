@@ -8,11 +8,16 @@
           :checked="todo.checked"
         )
         .title {{todo.name}}
-      .buttons
-        button.btn-remove(
-          type="button"
-            @click="removeTodo"
-          ) x
+    .button
+      router-link(
+        tag="button"
+        :to="`/view/${todo.name}`"
+      ).view >>
+    .button
+      button.btn-remove(
+        type="button"
+          @click="removeTodo"
+        ) x
 </template>
 
 <script>
